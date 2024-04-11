@@ -20,12 +20,16 @@ class MainActivity : AppCompatActivity() {
         nombre = findViewById(R.id.nombre)
 
         pantalla1.setOnClickListener { llamarPantalla(Intent(this,MainActivity2::class.java)) }
-        pantalla2.setOnClickListener { llamarPantalla(Intent(this,MainActivity3::class.java)) }
+        pantalla2.setOnClickListener { llamarPantalla2(Intent(this,MainActivity3::class.java)) }
     }
 
     private fun llamarPantalla(intent: Intent) {
         startActivity(intent)
     }
+    private fun llamarPantalla2(intent: Intent) {
+        intent.putExtra("nombre", nombre.text.toString())		    // Agrega los mensajes a enviar
+        startActivity(intent)
 
+    }
 
 }
